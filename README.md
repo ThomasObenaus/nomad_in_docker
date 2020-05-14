@@ -20,7 +20,7 @@ make build.0.9.1
 make run.0.9.1
 ```
 
-Build and Run a custom version
+Build and Run a Custom Version
 
 ```bash
 ##### BUILD ###################
@@ -31,6 +31,16 @@ docker build -t nomad_in_docker -f Dockerfile --build-arg NOMAD_VERSION=0.11.1 -
 
 ##### RUN ###################
 docker run --privileged -it -p 8500:8500 -p 4646:4646 nomad_in_docker:latest
+```
+
+## Pull and Run
+
+```bash
+# build (nomad 0.9.1 + consul 1.5.0)
+docker pull thobe/nomad:0.9.1
+
+# run  (nomad 0.9.1 + consul 1.5.0)
+docker run --privileged -it -p 8500:8500 -p 4646:4646 thobe/nomad:0.9.1
 ```
 
 ## Nomad and Consul
