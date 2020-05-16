@@ -1,5 +1,5 @@
-log_level = "WARN"
-enable_debug = false
+log_level = "DEBUG"
+enable_debug = true
 datacenter = "testing"
 data_dir = "/tmp/nomad-devagent"
 
