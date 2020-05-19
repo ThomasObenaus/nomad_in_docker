@@ -1,7 +1,7 @@
 log_level = "WARN"
 enable_debug = false
 datacenter = "testing"
-data_dir = "/tmp/nomad-devagent"
+data_dir = "/tmp/nomad"
 
 name = "nomad-devagent"
 
