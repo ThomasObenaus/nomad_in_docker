@@ -32,3 +32,18 @@ push.0.11.1: build.0.11.1 ## pushes the nomad in version 0.11.1 with consul in v
 run.0.11.1: build.0.11.1 ## run nomad in version 0.11.1 with consul in version 1.7.3
 	@echo "--> run nomad-consul container (nomad 0.11.1, consul 1.7.3)"
 	@docker run --privileged -it -p 8500:8500 -p 4646:4646 thobe/nomad:0.11.1
+
+
+build.0.11.2: ## builds and tags nomad in version 0.11.2 with consul in version 1.7.3
+	@echo "--> build image with nomad 0.11.2 and consul 1.7.3"
+	@docker build -t thobe/nomad -f Dockerfile --build-arg NOMAD_VERSION=0.11.2 --build-arg CONSUL_VERSION=1.7.3 .
+	@echo "--> tag image as thobe/nomad:0.11.2"
+	@docker tag thobe/nomad:latest thobe/nomad:0.11.2
+
+push.0.11.2: build.0.11.2 ## pushes the nomad in version 0.11.2 with consul in version 1.7.3 to docker hub
+	@echo "--> push image thobe/nomad:0.11.2"
+	@docker push thobe/nomad:0.11.2
+
+run.0.11.2: build.0.11.2 ## run nomad in version 0.11.2 with consul in version 1.7.3
+	@echo "--> run nomad-consul container (nomad 0.11.2, consul 1.7.3)"
+	@docker run --privileged -it -p 8500:8500 -p 4646:4646 thobe/nomad:0.11.2
