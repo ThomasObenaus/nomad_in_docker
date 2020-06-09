@@ -50,3 +50,7 @@ To open the UI go to:
 
 - nomad: http://localhost:4646
 - consul: http://localhost:8500
+
+## Useful nomad jobs
+
+At [jobs](jobs/) one can find some useful nomad jobs like the fabio load-balancer or a local docker registry.
